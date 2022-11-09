@@ -10,9 +10,8 @@
 
 <!--    custom color-->
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#00ADB5</color>
+    <color name="primary">#F53803</color>
     <color name="black">#191919</color>
-    <color name="linear_1">#00ADB5</color>
-    <color name="linear_2">#21E6C1</color>
+    <color name="secondary">#F5D020</color>
 
 </resources>
