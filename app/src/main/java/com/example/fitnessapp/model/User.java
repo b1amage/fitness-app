@@ -87,6 +87,15 @@ public class User {
         this.weekCaloOut = weekCaloOut;
     }
 
+    public double getBMI() {
+        return height / (weight * weight);
+    }
+
+    public String getBodyStatus() {
+        double bmi = getBMI();
+        return bmi < 18.5 ? "underweight" : (bmi >= 18.5 && bmi < 25) ? "normal" : (bmi >= 25 && bmi < 30) ? "overweight" : "obesity";
+    }
+
     @Override
     public String toString() {
         return "User{" +
