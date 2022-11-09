@@ -93,7 +93,15 @@ public class User {
 
     public String getBodyStatus() {
         double bmi = getBMI();
-        return bmi < 18.5 ? "underweight" : (bmi >= 18.5 && bmi < 25) ? "normal" : (bmi >= 25 && bmi < 30) ? "overweight" : "obesity";
+        return bmi < 18.5 ? "underweight" :
+                (bmi >= 18.5 && bmi < 25) ? "normal" :
+                (bmi >= 25 && bmi < 30) ? "overweight" : "obesity";
+    }
+
+    public double getCaloriesNeedPerDay() {
+        return gender == 'f' ?
+                (6.25 * height * 100) + (10 * weight) - (5 * age) - 161 :
+                (6.25 * height * 100) + (10 * weight) - (5 * age) + 5;
     }
 
     @Override
