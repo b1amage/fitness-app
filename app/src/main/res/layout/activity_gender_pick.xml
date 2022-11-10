@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GenderPickActivity"
+    android:padding="40dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is your gender?"
+        android:id="@+id/genderTitle"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <RadioGroup
+        android:id="@+id/genderRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/genderTitle">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Male"
+            android:buttonTint="@color/primary"
+            android:drawableLeft="@drawable/male"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="30dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:buttonTint="@color/primary"
+            android:drawableLeft="@drawable/female"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="30dp"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="16dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/genderNextBtn"
+        />
+
+
+
+
+</RelativeLayout>

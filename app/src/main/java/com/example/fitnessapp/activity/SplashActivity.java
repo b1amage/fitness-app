@@ -1,4 +1,4 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.fitnessapp.R;
 
 public class SplashActivity extends AppCompatActivity {
     private static final long DURATION = 2000;
@@ -20,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, GenderPickActivity.class));
                 finish();
             }
         }, DURATION);
