@@ -20,29 +20,80 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Weight in kg"
-            android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/scale"
-            android:background="@drawable/custom_input"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="16dp"
-            android:id="@+id/weightEditText"/>
 
-        <EditText
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Height in meter"
-            android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/height"
-            android:background="@drawable/custom_input"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="16dp"
-            android:id="@+id/heightEditText"
-            android:layout_below="@+id/weightEditText"
-            android:layout_marginTop="28dp"/>
+            android:id="@+id/weightEditTextCtn">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Weight in kg"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/scale"
+                android:background="@drawable/custom_input"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="16dp"
+                android:id="@+id/weightEditText"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_below="@+id/weightEditText"
+                android:layout_marginTop="4dp"
+                android:background="#FF9494"
+                android:padding="4dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/error"
+                android:drawablePadding="4dp"
+                android:visibility="gone"
+                android:id="@+id/weightError"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/heightEditTextCtn"
+            android:layout_below="@+id/weightEditTextCtn"
+            android:layout_marginTop="28dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height in meter"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/height"
+                android:background="@drawable/custom_input"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="16dp"
+                android:id="@+id/heightEditText"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_below="@+id/heightEditText"
+                android:layout_marginTop="4dp"
+                android:background="#FF9494"
+                android:padding="4dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/error"
+                android:drawablePadding="4dp"
+                android:visibility="gone"
+                android:id="@+id/heightError"/>
+        </RelativeLayout>
+
+
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Height in meter"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:drawableLeft="@drawable/height"-->
+<!--            android:background="@drawable/custom_input"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:paddingVertical="16dp"-->
+<!--            android:id="@+id/heightEditText"-->
+<!--            android:layout_below="@+id/weightEditTextCtn"-->
+<!--            android:layout_marginTop="28dp"/>-->
     </RelativeLayout>
 
     <Button
