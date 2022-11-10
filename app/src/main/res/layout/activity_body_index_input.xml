@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BodyIndexInputActivity"
+    android:padding="40dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body Indexes"
+        android:id="@+id/ageTitle"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight in kg"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/scale"
+            android:background="@drawable/custom_input"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp"
+            android:id="@+id/weightEditText"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Height in meter"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/height"
+            android:background="@drawable/custom_input"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp"
+            android:id="@+id/heightEditText"
+            android:layout_below="@+id/weightEditText"
+            android:layout_marginTop="28dp"/>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="16dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bodyIndexNextBtn"
+        />
+
+
+</RelativeLayout>
