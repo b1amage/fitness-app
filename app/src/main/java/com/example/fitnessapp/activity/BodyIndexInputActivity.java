@@ -64,9 +64,11 @@ public class BodyIndexInputActivity extends AppCompatActivity {
 
                 char gender = getIntent().getExtras().getChar("gender");
                 int age = getIntent().getExtras().getInt("age");
+                String name = getIntent().getExtras().getString("name");
 
                 Intent intent = new Intent(BodyIndexInputActivity.this, GoalPickActivity.class);
                 intent.putExtra("age", age);
+                intent.putExtra("name", name);
                 intent.putExtra("gender", gender);
                 intent.putExtra("weight", weight);
                 intent.putExtra("height", height);

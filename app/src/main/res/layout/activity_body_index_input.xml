@@ -34,7 +34,8 @@
                 android:background="@drawable/custom_input"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="16dp"
-                android:id="@+id/weightEditText"/>
+                android:id="@+id/weightEditText"
+                android:inputType="numberDecimal"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,7 +66,8 @@
                 android:background="@drawable/custom_input"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="16dp"
-                android:id="@+id/heightEditText"/>
+                android:id="@+id/heightEditText"
+                android:inputType="numberDecimal"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

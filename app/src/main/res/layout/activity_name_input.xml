@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NameInputActivity"
+    android:padding="40dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to fitness app?"
+        android:id="@+id/welcomeTitle"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is your name?"
+        android:id="@+id/nameTitle"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/welcomeTitle"
+        android:layout_marginTop="36dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameEditTextCtn"
+        android:layout_below="@+id/nameTitle"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Eg. Bao Nguyen"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/person"
+            android:background="@drawable/custom_input"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp"
+            android:id="@+id/nameEditText" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@+id/nameEditText"
+            android:layout_marginTop="4dp"
+            android:background="#FF9494"
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/error"
+            android:drawablePadding="4dp"
+            android:visibility="gone"
+            android:id="@+id/nameError"/>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="16dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/nameNextBtn"
+        />
+
+</RelativeLayout>

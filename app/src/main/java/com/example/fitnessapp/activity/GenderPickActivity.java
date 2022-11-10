@@ -27,7 +27,7 @@ public class GenderPickActivity extends AppCompatActivity {
         genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-                switch(checkedId){
+                switch(checkedId) {
                     case R.id.radioMale:
                         gender = 'm';
                         break;
@@ -42,6 +42,8 @@ public class GenderPickActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GenderPickActivity.this, AgePickActivity.class);
+                String name = getIntent().getExtras().getString("name");
+                intent.putExtra("name", name);
                 intent.putExtra("gender", gender);
                 startActivity(intent);
                 finish();

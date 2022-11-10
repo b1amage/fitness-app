@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.GoalPickActivity">
+    tools:context=".activity.GoalPickActivity"
+    android:padding="40dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is your goal?"
+        android:id="@+id/goalTitle"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <RadioGroup
+        android:id="@+id/goalRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/goalTitle">
+
+        <RadioButton
+            android:id="@+id/radioWeightLoss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Lose weight"
+            android:buttonTint="@color/primary"
+            android:drawableLeft="@drawable/weight_loss"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="30dp"
+            android:drawablePadding="8dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radioWeightGain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gain weight"
+            android:buttonTint="@color/primary"
+            android:drawableLeft="@drawable/weight_gain"
+            android:textStyle="bold"
+            android:drawablePadding="8dp"
+            android:textSize="20dp"
+            android:padding="30dp"/>
+
+        <RadioButton
+            android:id="@+id/radioStay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stay weight"
+            android:buttonTint="@color/primary"
+            android:drawableLeft="@drawable/stable"
+            android:drawablePadding="8dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="30dp"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="16dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/goalNextBtn"
+        />
+
+</RelativeLayout>

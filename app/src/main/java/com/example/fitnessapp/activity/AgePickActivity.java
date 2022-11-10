@@ -41,12 +41,11 @@ public class AgePickActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 char gender  = getIntent().getExtras().getChar("gender");
+                String name = getIntent().getExtras().getString("name");
                 Intent intent = new Intent(AgePickActivity.this, BodyIndexInputActivity.class);
                 intent.putExtra("gender", gender);
+                intent.putExtra("name", name);
                 intent.putExtra("age", Integer.parseInt(txtAge.getText().toString()));
-
-                System.out.println("gender: " + gender);
-                System.out.println("age: " + Integer.parseInt(txtAge.getText().toString()));
                 startActivity(intent);
                 finish();
             }
