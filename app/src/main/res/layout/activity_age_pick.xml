@@ -14,13 +14,59 @@
         android:id="@+id/ageTitle"
         android:textSize="28dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black" />
 
-    <NumberPicker
-        android:id="@+id/agePicker"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_below="@+id/ageTitle"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am "
+            android:id="@+id/txtAgeFirst"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/txtAge"
+            android:layout_toRightOf="@+id/txtAgeFirst"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" years old."
+            android:layout_toRightOf="@+id/txtAge"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="100dp"
+       >
+
+        <NumberPicker
+            android:id="@+id/agePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:scrollbarSize="8dp"
+            android:theme="@style/NumberPicker"
+            android:elevation="8dp"
+        />
+    </LinearLayout>
+
+
 
     <Button
         android:layout_width="match_parent"

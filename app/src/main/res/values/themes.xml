@@ -14,4 +14,11 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="NumberPicker" parent="Theme.AppCompat.DayNight">
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorControlNormal">@color/primary</item>
+        <item name="android:textColorPrimary">@color/primary</item>
+        <item name="android:textSize">24dp</item>
+    </style>
 </resources>
