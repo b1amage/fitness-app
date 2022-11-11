@@ -12,7 +12,7 @@ public class User {
     private ArrayList<Double> weekCaloIn;
     private ArrayList<Double> weekCaloOut;
 
-    public User(String name, int age, double weight, double height, char gender, String goal, ArrayList<Double> weekCaloIn, ArrayList<Double> weekCaloOut) {
+    public User(String name, int age, double weight, double height, char gender, String goal) {
         this.name = name;
         this.age = age;
         this.weight = weight;
