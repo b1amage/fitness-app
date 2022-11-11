@@ -3,6 +3,8 @@ package com.example.fitnessapp.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -71,26 +73,26 @@ public class GoalPickActivity extends AppCompatActivity {
 
                 User user = new User(name, age, weight, height, gender, goal);
 
-//                try {
-//                    FileWriter fileWriter = new FileWriter("/Users/quocbaonguyenluu/Desktop/fitness-app/app/src/main/java/com/example/fitnessapp/data/user.txt");
-//                    fileWriter.write(user.getName());
-//                    fileWriter.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+                // Storing data into SharedPreferences
+                SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
 
-                String fileName = "data.txt";
-                String fileContent = "avsrfe";
-                FileOutputStream fileOutputStream;
+                // Creating an Editor object to edit(write to the file)
+                SharedPreferences.Editor myEdit = sharedPreferences.edit();
 
-                try {
-                    fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND);
-                    fileOutputStream.write(fileContent.getBytes(StandardCharsets.UTF_8));
-                    fileOutputStream.close();
-                    System.out.println("Write success");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                // Storing the key and its value as the data fetched from edittext
+                myEdit.putBoolean("passFirstTime", true);
+                myEdit.putString("name", user.getName());
+                myEdit.putInt("age", user.getAge());
+                myEdit.putString("goal", user.getGoal());
+                myEdit.putString("gender", String.valueOf(user.getGender()));
+                myEdit.putFloat("weight", (float) user.getWeight());
+                myEdit.putFloat("height", (float) user.getHeight());
+
+                myEdit.commit();
+
+                Intent intent = new Intent(GoalPickActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

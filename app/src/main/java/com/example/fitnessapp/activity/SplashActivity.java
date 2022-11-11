@@ -1,6 +1,8 @@
 package com.example.fitnessapp.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
@@ -19,10 +21,22 @@ public class SplashActivity extends AppCompatActivity {
         ImageView logo = findViewById(R.id.logo);
         logo.animate().alpha(0).setDuration(DURATION + 100);
 
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, NameInputActivity.class));
+
+                SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+
+                boolean passFirstTime = sh.getBoolean("passFirstTime", false);
+
+                if (passFirstTime) {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                } else {
+                    startActivity(new Intent(SplashActivity.this, NameInputActivity.class));
+                }
+
                 finish();
             }
         }, DURATION);
