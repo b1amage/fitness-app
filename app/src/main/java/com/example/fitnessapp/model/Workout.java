@@ -5,12 +5,19 @@ public class Workout {
     private String category;
     private double time;
     private double caloriesPerMinute;
+    private int image;
 
     public Workout(int id, String category, double time, double caloriesPerMinute) {
         this.id = id;
         this.category = category;
         this.time = time;
         this.caloriesPerMinute = caloriesPerMinute;
+    }
+
+    public Workout(String category, double caloriesPerMinute, int image) {
+        this.category = category;
+        this.caloriesPerMinute = caloriesPerMinute;
+        this.image = image;
     }
 
     public String getCategory() {
@@ -35,6 +42,14 @@ public class Workout {
 
     public void setCaloriesPerMinute(double caloriesPerMinute) {
         this.caloriesPerMinute = caloriesPerMinute;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public int getId() {

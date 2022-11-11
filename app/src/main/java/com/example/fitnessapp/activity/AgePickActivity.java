@@ -25,6 +25,7 @@ public class AgePickActivity extends AppCompatActivity {
         setContentView(R.layout.activity_age_pick);
 
         txtAge = findViewById(R.id.txtAge);
+        txtAge.setText(String.valueOf(1));
         nextBtn = findViewById(R.id.ageNextBtn);
         numberPicker = findViewById(R.id.agePicker);
         numberPicker.setMinValue(MIN_AGE);
