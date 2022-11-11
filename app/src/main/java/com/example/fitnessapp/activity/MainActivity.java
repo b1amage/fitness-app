@@ -3,6 +3,7 @@ package com.example.fitnessapp.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Workout workout = (Workout) workoutAdapter.getItem(position);
                 Toast.makeText(MainActivity.this, workout.getCategory(), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(MainActivity.this, WatchActivity.class);
+                intent.putExtra("category", workout.getCategory());
+                intent.putExtra("caloriesPerMinute", workout.getCaloriesPerMinute());
+
+                startActivityForResult(intent, 100);
             }
         });
 
@@ -62,4 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
         initData();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            if (resultCode == RESULT_OK) {
+                double workoutCalories = data.getExtras().getDouble("calories");
+                Toast.makeText(MainActivity.this, "You have jus burned " + workoutCalories + "calories!", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
 }
