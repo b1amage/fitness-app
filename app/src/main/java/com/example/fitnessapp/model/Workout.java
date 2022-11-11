@@ -1,11 +1,13 @@
 package com.example.fitnessapp.model;
 
 public class Workout {
+    private int id;
     private String category;
     private double time;
     private double caloriesPerMinute;
 
-    public Workout(String category, double time, double caloriesPerMinute) {
+    public Workout(int id, String category, double time, double caloriesPerMinute) {
+        this.id = id;
         this.category = category;
         this.time = time;
         this.caloriesPerMinute = caloriesPerMinute;
@@ -35,10 +37,19 @@ public class Workout {
         this.caloriesPerMinute = caloriesPerMinute;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Workout{" +
-                "category='" + category + '\'' +
+                "id=" + id +
+                ", category='" + category + '\'' +
                 ", time=" + time +
                 ", caloriesPerMinute=" + caloriesPerMinute +
                 '}';

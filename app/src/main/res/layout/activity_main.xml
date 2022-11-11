@@ -5,13 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
-    android:padding="24dp">
+    android:padding="40dp">
 
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/txtCtn">
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/textHello"
+       android:text="Hello, good morning"
+       android:textSize="20dp"/>
 
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_centerInParent="true"
-       android:text="Hello"/>
+       android:text="Name"
+       android:id="@+id/textNameMain"
+       android:layout_below="@+id/textHello"
+       android:textStyle="bold"
+       android:textSize="24dp"/>
+</RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:background="@drawable/banner"
+       android:layout_centerHorizontal="true"
+       android:layout_below="@id/txtCtn"
+       android:layout_marginTop="40dp"
+       >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:text="Start exercising helps you release stress and get a fit body"
+          android:textStyle="bold"
+          android:textSize="18dp"
+          android:paddingVertical="10dp"
+          android:paddingHorizontal="12dp"
+          android:id="@+id/txtBanner"
+          android:layout_marginTop="10dp"/>
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/txtBanner"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="30dp"
+          android:text="Exercise now"
+          android:backgroundTint="@color/blue"
+         />
+
+   </RelativeLayout>
+
+
 
 </RelativeLayout>

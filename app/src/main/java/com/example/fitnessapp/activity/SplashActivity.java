@@ -21,8 +21,6 @@ public class SplashActivity extends AppCompatActivity {
         ImageView logo = findViewById(R.id.logo);
         logo.animate().alpha(0).setDuration(DURATION + 100);
 
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -30,6 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                 SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
                 boolean passFirstTime = sh.getBoolean("passFirstTime", false);
+                System.out.println(sh.getString("name", ""));
 
                 if (passFirstTime) {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
