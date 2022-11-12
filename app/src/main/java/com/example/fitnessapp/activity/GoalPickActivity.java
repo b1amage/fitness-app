@@ -2,7 +2,6 @@ package com.example.fitnessapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,17 +10,8 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.helper.CsvWriter;
 import com.example.fitnessapp.model.User;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 
 public class GoalPickActivity extends AppCompatActivity {
     private RadioGroup goalRadioGroup;
@@ -87,6 +77,7 @@ public class GoalPickActivity extends AppCompatActivity {
                 myEdit.putString("gender", String.valueOf(user.getGender()));
                 myEdit.putFloat("weight", (float) user.getWeight());
                 myEdit.putFloat("height", (float) user.getHeight());
+
 
                 myEdit.commit();
 
