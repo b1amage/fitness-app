@@ -1,11 +1,13 @@
 package com.example.fitnessapp.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.adapter.WorkoutAdapter;
 import com.example.fitnessapp.model.Workout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textName;
     private List<Workout> workoutList;
     private ListView listView;
+
+    private BottomNavigationView bottomNav;
 
     private void initData() {
         workoutList = new ArrayList<>();
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         WorkoutAdapter workoutAdapter = new WorkoutAdapter(workoutList);
+        bottomNav = findViewById(R.id.bottomNavigationView);
         listView = findViewById(R.id.workoutListView);
         listView.setAdapter(workoutAdapter);
 
@@ -54,6 +60,25 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("caloriesPerMinute", workout.getCaloriesPerMinute());
 
                 startActivityForResult(intent, 100);
+            }
+        });
+
+        // bottom nav
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case (R.id.home):
+                        Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_LONG).show();
+                        break;
+                    case (R.id.meal):
+                        Toast.makeText(MainActivity.this, "Meal", Toast.LENGTH_LONG).show();
+                        break;
+                    case (R.id.profile):
+                        Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_LONG).show();
+                        break;
+                }
+                return true;
             }
         });
 

@@ -52,7 +52,9 @@ public class WatchActivity extends AppCompatActivity {
     }
 
     public void onStopChronometer(View v) {
-        // back to previous view return the
+        // save to preference
+
+        // back to previous view
         Intent intent = new Intent(WatchActivity.this, MainActivity.class);
         intent.putExtra("calories", (timeWorkout / 1000 / 60) * getIntent().getExtras().getDouble("caloriesPerMinute"));
         setResult(RESULT_OK, intent);
