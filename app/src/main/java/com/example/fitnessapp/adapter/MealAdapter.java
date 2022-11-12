@@ -46,7 +46,7 @@ public class MealAdapter extends BaseAdapter {
 
         ((ImageView) viewMeal.findViewById(R.id.mealImg)).setImageResource(meal.getImg());
         ((TextView) viewMeal.findViewById(R.id.txtMealName)).setText(meal.getName());
-        ((TextView) viewMeal.findViewById(R.id.txtCalo)).setText(meal.getName());
+        ((TextView) viewMeal.findViewById(R.id.txtCalo)).setText(String.valueOf(meal.getCalories()) + " calories");
 
         return viewMeal;
     }
