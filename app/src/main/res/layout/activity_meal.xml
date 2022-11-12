@@ -7,16 +7,30 @@
     tools:context=".activity.MainActivity">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="40dp"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:padding="40dp">
 
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Meal View"
-          android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/textTitleMeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recommend meals"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mealListView"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="20dp"
+            android:layout_below="@+id/textTitleMeal"
+            android:layout_marginTop="50dp"
+            android:paddingBottom="40dp"/>
+
 
     </RelativeLayout>
 

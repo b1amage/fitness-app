@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/meal"
+            android:id="@+id/mealImg"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vegan salad"
+            android:layout_below="@+id/mealImg"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:id="@+id/txtMealName"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtMealName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="136 calories"
+                android:drawableStart="@drawable/calories"
+                android:drawablePadding="4dp"
+                android:textSize="20dp"
+                android:layout_marginTop="4dp"
+                android:id="@+id/txtCalo"
+                />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

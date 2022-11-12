@@ -3,12 +3,14 @@ package com.example.fitnessapp.model;
 import java.util.ArrayList;
 
 public class Dish {
+    private int id;
     private double calories;
     private String name;
-    private String img;
+    private int img;
     private ArrayList<Ingredient> ingredients;
 
-    public Dish(String name, String img, ArrayList<Ingredient> ingredients) {
+    public Dish(int id, String name, int img, ArrayList<Ingredient> ingredients) {
+        this.id = id;
         this.name = name;
         this.img = img;
         this.ingredients = ingredients;
@@ -27,11 +29,11 @@ public class Dish {
         this.name = name;
     }
 
-    public String getImg() {
+    public int getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(int img) {
         this.img = img;
     }
 
@@ -41,6 +43,14 @@ public class Dish {
 
     public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     private void calculateCalories() {
