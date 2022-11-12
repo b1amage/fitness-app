@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         WorkoutAdapter workoutAdapter = new WorkoutAdapter(workoutList);
         bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav.setSelectedItemId(R.id.home);
         listView = findViewById(R.id.workoutListView);
         listView.setAdapter(workoutAdapter);
 
@@ -67,15 +68,19 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent intent;
                 switch (item.getItemId()) {
                     case (R.id.home):
-                        Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_LONG).show();
                         break;
                     case (R.id.meal):
-                        Toast.makeText(MainActivity.this, "Meal", Toast.LENGTH_LONG).show();
+                        intent = new Intent(MainActivity.this, MealActivity.class);
+                        startActivity(intent);
+                        finish();
                         break;
                     case (R.id.profile):
-                        Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_LONG).show();
+                        intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        startActivity(intent);
+                        finish();
                         break;
                 }
                 return true;

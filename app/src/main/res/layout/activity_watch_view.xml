@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/working_out"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/watchCtn" />
+        android:layout_above="@+id/watchCtn"
+        android:id="@+id/gif"/>
 
     <RelativeLayout
         android:id="@+id/watchCtn"
