@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MealDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/meal"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:id="@+id/detailMealImg"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="20dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="300dp"
+                android:padding="20dp"
+                android:layout_centerHorizontal="true"
+                android:elevation="10dp"
+                android:background="@drawable/shadow"
+                android:id="@+id/detailCaloCtn">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="165 calories"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@drawable/calories"
+                        android:textSize="24dp"
+                        android:drawablePadding="4dp"
+                        android:textStyle="bold"
+                        android:id="@+id/detailCaloTxt"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vegan salad"
+                android:layout_below="@+id/detailCaloCtn"
+                android:layout_marginTop="40dp"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:id="@+id/detailMealNameTxt"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailMealNameTxt"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ingredient1Ctn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredient 1: "
+                        android:id="@+id/ingredient1Name"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="190 calories"
+                        android:id="@+id/ingredient1Calo"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/primary"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ingredient2Ctn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredient 2: "
+                        android:id="@+id/ingredient2Name"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="190 calories"
+                        android:id="@+id/ingredient2Calo"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/primary"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ingredient3Ctn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredient 3: "
+                        android:id="@+id/ingredient3Name"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="190 calories"
+                        android:id="@+id/ingredient3Calo"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/primary"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose"
+        android:textSize="16dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/chooseMealBtn"
+        android:onClick="onChooseMealBtnClick"
+        android:layout_marginHorizontal="30dp" />
+
+
+</RelativeLayout>

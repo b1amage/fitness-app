@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Recommend meals"
-            android:textSize="20dp"
+            android:textSize="32dp"
             android:textStyle="bold"
             />
 

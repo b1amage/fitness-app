@@ -104,8 +104,24 @@ public class MealActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Dish meal = (Dish) adapter.getItem(position);
-                System.out.println("Clicked");
                 Toast.makeText(MealActivity.this, String.valueOf(meal.getId()) , Toast.LENGTH_LONG).show();
+
+                // Go to detail
+                Intent intent = new Intent(MealActivity.this, MealDetailActivity.class);
+                intent.putExtra("img", meal.getImg());
+                intent.putExtra("name", meal.getName());
+
+                intent.putExtra("ingredient1Name", meal.getIngredients().get(0).getName());
+                intent.putExtra("ingredient1Calo", meal.getIngredients().get(0).getCaloriesPerUnit() * meal.getIngredients().get(0).getAmount());
+
+                intent.putExtra("ingredient2Name", meal.getIngredients().get(1).getName());
+                intent.putExtra("ingredient2Calo", meal.getIngredients().get(1).getCaloriesPerUnit() * meal.getIngredients().get(1).getAmount());
+
+                intent.putExtra("ingredient3Name", meal.getIngredients().get(2).getName());
+                intent.putExtra("ingredient3Calo", meal.getIngredients().get(2).getCaloriesPerUnit() * meal.getIngredients().get(2).getAmount());
+
+                intent.putExtra("totalCalo", meal.getCalories());
+                startActivityForResult(intent, 100);
             }
         });
     }
