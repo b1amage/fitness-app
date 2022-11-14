@@ -2,7 +2,9 @@ package com.example.fitnessapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -75,7 +77,16 @@ public class MealDetailActivity extends AppCompatActivity {
     }
 
     public void onChooseMealBtnClick(View v) {
+        SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sh.edit();
+        double caloIn = sh.getFloat("caloIn", 0);
+        caloIn += getIntent().getExtras().getDouble("totalCalo");
+        myEdit.putFloat("caloIn", (float) caloIn);
+
+        myEdit.commit();
+
         Intent intent = new Intent(MealDetailActivity.this, MealActivity.class);
+        intent.putExtra("totalCalo", getIntent().getExtras().getDouble("totalCalo"));
         setResult(RESULT_OK, intent);
         finish();
     }

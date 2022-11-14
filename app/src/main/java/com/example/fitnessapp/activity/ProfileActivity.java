@@ -28,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView caloOut;
 
     private void initComponents() {
+        avatar = findViewById(R.id.userAvatar);
         username = findViewById(R.id.profileUsername);
         weight = findViewById(R.id.profileWeightTxt);
         height = findViewById(R.id.profileHeightTxt);
@@ -48,6 +49,11 @@ public class ProfileActivity extends AppCompatActivity {
         System.out.println("BMI: " + String.valueOf(sh.getFloat("bmi", 0)));
         bmi.setText(String.valueOf((double) Math.round(sh.getFloat("bmi", 0) * 100.0) / 100.0));
         tdee.setText(String.valueOf(Math.round(sh.getFloat("tdee", 0))));
+
+        caloIn.setText(String.valueOf(sh.getFloat("caloIn", 0)));
+        caloOut.setText(String.valueOf(sh.getFloat("caloOut", 0)));
+
+        avatar.setImageResource(sh.getString("gender", "m").equals("m") ? R.drawable.male_avatar : R.drawable.female_avatar);
     }
 
 

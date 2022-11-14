@@ -3,7 +3,9 @@ package com.example.fitnessapp.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -104,7 +106,6 @@ public class MealActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Dish meal = (Dish) adapter.getItem(position);
-                Toast.makeText(MealActivity.this, String.valueOf(meal.getId()) , Toast.LENGTH_LONG).show();
 
                 // Go to detail
                 Intent intent = new Intent(MealActivity.this, MealDetailActivity.class);
@@ -133,5 +134,15 @@ public class MealActivity extends AppCompatActivity {
 
        initBottomBar();
        initData();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(MealActivity.this, "You have jus absorb " + data.getExtras().getDouble("totalCalo") + " calories!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

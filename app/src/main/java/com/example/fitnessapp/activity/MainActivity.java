@@ -106,6 +106,15 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 100) {
             if (resultCode == RESULT_OK) {
                 double workoutCalories = data.getExtras().getDouble("calories");
+                SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor myEdit = sh.edit();
+
+                double caloOut = sh.getFloat("caloOut", 0);
+                caloOut += workoutCalories;
+                myEdit.putFloat("caloOut", (float) caloOut);
+
+                myEdit.commit();
+
                 Toast.makeText(MainActivity.this, "You have jus burned " + workoutCalories + " calories!", Toast.LENGTH_LONG).show();
             }
         }
