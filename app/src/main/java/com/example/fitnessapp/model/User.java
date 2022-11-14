@@ -88,7 +88,8 @@ public class User {
     }
 
     public double getBMI() {
-        return height / (weight * weight);
+        System.out.println("BMI calculated: " + weight / (height * height));
+        return weight / (height * height);
     }
 
     public String getBodyStatus() {

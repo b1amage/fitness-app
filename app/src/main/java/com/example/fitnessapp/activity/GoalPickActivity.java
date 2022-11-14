@@ -77,6 +77,9 @@ public class GoalPickActivity extends AppCompatActivity {
                 myEdit.putString("gender", String.valueOf(user.getGender()));
                 myEdit.putFloat("weight", (float) user.getWeight());
                 myEdit.putFloat("height", (float) user.getHeight());
+                myEdit.putFloat("bmi", (float) user.getBMI());
+                myEdit.putFloat("tdee", (float) user.getCaloriesNeedPerDay());
+                myEdit.putString("status", user.getBodyStatus());
 
 
                 myEdit.commit();

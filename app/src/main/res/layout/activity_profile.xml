@@ -7,17 +7,243 @@
     tools:context=".activity.MainActivity">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:padding="40dp"
-        android:layout_centerInParent="true">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile View"
-            android:layout_centerInParent="true"/>
+            android:src="@drawable/male_avatar"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/userAvatar"/>
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:layout_below="@+id/userAvatar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:id="@+id/profileUsername"
+                android:textColor="@color/primary"/>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileUsername"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:id="@+id/profileStats">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileWeightCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="70 kg"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24dp"
+                    android:id="@+id/profileWeightTxt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileHeightCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:layout_toRightOf="@+id/profileWeightCtn"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="1.75 m"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24dp"
+                    android:id="@+id/profileHeightTxt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Height"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileAgeCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:layout_toRightOf="@+id/profileHeightCtn"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="20"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24dp"
+                    android:id="@+id/profileAgeTxt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileStats"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:id="@+id/profileCaloCtn">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileBmiCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="23.6"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24dp"
+                    android:id="@+id/profileBmiTxt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BMI"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileTdeeCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:layout_toRightOf="@+id/profileBmiCtn"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="2100"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24dp"
+                    android:id="@+id/profileTdeeTxt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TDEE"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileCaloCtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileCaloInCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="1800"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="36dp"
+                    android:id="@+id/profileCaloInTxt"
+                    android:textColor="@color/primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories In"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/profileCaloOutCtn"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="24dp"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/profileCaloInCtn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="900"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="36dp"
+                    android:id="@+id/profileCaloOutTxt"
+                    android:textColor="@color/primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories Out"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
     </RelativeLayout>
 
 

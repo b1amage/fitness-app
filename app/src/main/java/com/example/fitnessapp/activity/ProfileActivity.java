@@ -3,9 +3,13 @@ package com.example.fitnessapp.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.fitnessapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,13 +17,48 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ProfileActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNav;
+    private ImageView avatar;
+    private TextView username;
+    private TextView weight;
+    private TextView height;
+    private TextView age;
+    private TextView bmi;
+    private TextView tdee;
+    private TextView caloIn;
+    private TextView caloOut;
+
+    private void initComponents() {
+        username = findViewById(R.id.profileUsername);
+        weight = findViewById(R.id.profileWeightTxt);
+        height = findViewById(R.id.profileHeightTxt);
+        age = findViewById(R.id.profileAgeTxt);
+        bmi = findViewById(R.id.profileBmiTxt);
+        tdee = findViewById(R.id.profileTdeeTxt);
+        caloIn = findViewById(R.id.profileCaloInTxt);
+        caloOut = findViewById(R.id.profileCaloOutTxt);
+    }
+
+    private void initData() {
+        SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+
+        username.setText(sh.getString("name", ""));
+        weight.setText(String.valueOf(sh.getFloat("weight", 0)));
+        height.setText(String.valueOf(sh.getFloat("height", 0)));
+        age.setText(String.valueOf(sh.getInt("age", 0)));
+        System.out.println("BMI: " + String.valueOf(sh.getFloat("bmi", 0)));
+        bmi.setText(String.valueOf((double) Math.round(sh.getFloat("bmi", 0) * 100.0) / 100.0));
+        tdee.setText(String.valueOf(Math.round(sh.getFloat("tdee", 0))));
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        initComponents();
+        initData();
 
+        // bototm nav
         bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setSelectedItemId(R.id.profile);
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

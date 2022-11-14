@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 100) {
             if (resultCode == RESULT_OK) {
                 double workoutCalories = data.getExtras().getDouble("calories");
-                Toast.makeText(MainActivity.this, "You have jus burned " + workoutCalories + "calories!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "You have jus burned " + workoutCalories + " calories!", Toast.LENGTH_LONG).show();
             }
         }
     }
