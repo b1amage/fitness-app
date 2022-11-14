@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNav;
 
+    private void initComponent() {
+        bottomNav = findViewById(R.id.bottomNavigationView);
+        listView = findViewById(R.id.workoutListView);
+        textName = findViewById(R.id.textNameMain);
+    }
+
     private void initData() {
         workoutList = new ArrayList<>();
 
@@ -45,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         WorkoutAdapter workoutAdapter = new WorkoutAdapter(workoutList);
-        bottomNav = findViewById(R.id.bottomNavigationView);
+
         bottomNav.setSelectedItemId(R.id.home);
-        listView = findViewById(R.id.workoutListView);
         listView.setAdapter(workoutAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -93,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textName = findViewById(R.id.textNameMain);
+        initComponent();
+
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         textName.setText(sh.getString("name", ""));
 

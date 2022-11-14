@@ -17,14 +17,18 @@ public class NameInputActivity extends AppCompatActivity {
     private Button nextBtn;
     private TextView nameError;
 
+    private void initComponent() {
+        nameEditText = findViewById(R.id.nameEditText);
+        nextBtn = findViewById(R.id.nameNextBtn);
+        nameError = findViewById(R.id.nameError);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name_input);
 
-        nameEditText = findViewById(R.id.nameEditText);
-        nextBtn = findViewById(R.id.nameNextBtn);
-        nameError = findViewById(R.id.nameError);
+        initComponent();
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

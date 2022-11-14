@@ -15,13 +15,17 @@ public class GenderPickActivity extends AppCompatActivity {
     private Button nextButton;
     private char gender;
 
+    private void initComponent() {
+        genderRadioGroup = findViewById(R.id.genderRadio);
+        nextButton = findViewById(R.id.genderNextBtn);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gender_pick);
+        initComponent();
 
-        genderRadioGroup = findViewById(R.id.genderRadio);
-        nextButton = findViewById(R.id.genderNextBtn);
         gender = 'm'; // default value: male
 
         genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

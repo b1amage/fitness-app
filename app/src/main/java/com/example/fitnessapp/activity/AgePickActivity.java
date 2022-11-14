@@ -19,17 +19,25 @@ public class AgePickActivity extends AppCompatActivity {
     private static final int MIN_AGE = 1;
     private static final int MAX_AGE = 100;
 
+    private void initComponent() {
+        txtAge = findViewById(R.id.txtAge);
+        nextBtn = findViewById(R.id.ageNextBtn);
+        numberPicker = findViewById(R.id.agePicker);
+        numberPicker.setMinValue(MIN_AGE);
+        numberPicker.setMaxValue(MAX_AGE);
+    }
+
+    private void initContent() {
+        txtAge.setText(String.valueOf(1));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_age_pick);
 
-        txtAge = findViewById(R.id.txtAge);
-        txtAge.setText(String.valueOf(1));
-        nextBtn = findViewById(R.id.ageNextBtn);
-        numberPicker = findViewById(R.id.agePicker);
-        numberPicker.setMinValue(MIN_AGE);
-        numberPicker.setMaxValue(MAX_AGE);
+        initComponent();
+        initContent();
 
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override

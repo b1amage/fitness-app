@@ -18,15 +18,18 @@ public class GoalPickActivity extends AppCompatActivity {
     private Button nextBtn;
     private String goal;
 
+    private void initComponent() {
+        goalRadioGroup = findViewById(R.id.goalRadio);
+        nextBtn = findViewById(R.id.goalNextBtn);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal_pick);
-
         goal = "loss";
 
-        goalRadioGroup = findViewById(R.id.goalRadio);
-        nextBtn = findViewById(R.id.goalNextBtn);
+        initComponent();
 
         goalRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

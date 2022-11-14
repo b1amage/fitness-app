@@ -19,17 +19,20 @@ public class BodyIndexInputActivity extends AppCompatActivity {
     private TextView weightError;
     private TextView heightError;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_body_index_input);
-
+    private void initComponent() {
         weightEditText = findViewById(R.id.weightEditText);
         heightEditText = findViewById(R.id.heightEditText);
         bodyIndexNextBtn = findViewById(R.id.bodyIndexNextBtn);
         weightError = findViewById(R.id.weightError);
         heightError = findViewById(R.id.heightError);
+    }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_body_index_input);
+
+        initComponent();
 
         bodyIndexNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

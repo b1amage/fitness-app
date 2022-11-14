@@ -21,15 +21,19 @@ public class WatchActivity extends AppCompatActivity {
     private long timeWorkout = 0; // milisecond
     private GifImageView gif;
 
+    private void initComponent() {
+        gif = findViewById(R.id.gif);
+        chronometer = findViewById(R.id.chronometer);
+        chronometer.setFormat("Time: %s");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_watch_view);
 
-        gif = findViewById(R.id.gif);
+        initComponent();
         gif.setVisibility(View.GONE);
-        chronometer = findViewById(R.id.chronometer);
-        chronometer.setFormat("Time: %s");
     }
 
     public void onStartChronometer(View v) {
