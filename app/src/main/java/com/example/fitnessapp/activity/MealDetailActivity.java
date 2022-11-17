@@ -59,15 +59,15 @@ public class MealDetailActivity extends AppCompatActivity {
 
 
         mealName.setText(getIntent().getExtras().getString("name"));
-        ingredient1Name.setText(getIntent().getExtras().getString("ingredient1Name") + ": ");
-        ingredient2Name.setText(getIntent().getExtras().getString("ingredient2Name") + ": ");
-        ingredient3Name.setText(getIntent().getExtras().getString("ingredient3Name") + ": ");
+        ingredient1Name.setText(String.format("%s: ", getIntent().getExtras().getString("ingredient1Name")));
+        ingredient2Name.setText(String.format("%s: ", getIntent().getExtras().getString("ingredient2Name")));
+        ingredient3Name.setText(String.format("%s: ", getIntent().getExtras().getString("ingredient3Name")));
 
-        ingredient1Calo.setText(getIntent().getExtras().getDouble("ingredient1Calo") + " calories");
-        ingredient2Calo.setText(getIntent().getExtras().getDouble("ingredient2Calo") + " calories");
-        ingredient3Calo.setText(getIntent().getExtras().getDouble("ingredient3Calo") + " calories");
+        ingredient1Calo.setText(String.format("%s calories", getIntent().getExtras().getDouble("ingredient1Calo")));
+        ingredient2Calo.setText(String.format("%s calories", getIntent().getExtras().getDouble("ingredient2Calo")));
+        ingredient3Calo.setText(String.format("%s calories", getIntent().getExtras().getDouble("ingredient3Calo")));
 
-        totalCalories.setText(getIntent().getExtras().getDouble("totalCalo") + " calories");
+        totalCalories.setText(String.format("%s calories", getIntent().getExtras().getDouble("totalCalo")));
 
 
         Resources res = getResources(); //resource handle

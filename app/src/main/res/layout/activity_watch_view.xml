@@ -6,29 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".activity.WatchActivity"
     android:paddingHorizontal="40dp"
-    android:paddingVertical="100dp">
+    android:paddingVertical="40dp">
 
-    <pl.droidsonroids.gif.GifImageView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/working_out"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/watchCtn"
-        android:id="@+id/gif"/>
+        android:id="@+id/instructionCtn">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You are training basketball. The calories consumption is 50 calo per minutes"
+            android:id="@+id/txtInstruction"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/working_out"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/gif"
+            android:layout_below="@id/txtInstruction"
+            android:layout_marginTop="20dp" />
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/watchCtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/instructionCtn"
         android:layout_centerInParent="true">
-
 
         <Chronometer
             android:id="@+id/chronometer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
+            android:layout_marginTop="20dp"
             android:textSize="40dp" />
 
         <LinearLayout
@@ -37,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/chronometer"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -103,5 +121,16 @@
 
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="8dp"
+        android:drawableLeft="@drawable/back"
+        android:minWidth="120dp"
+        android:onClick="onBackBtnClick"
+        android:text="Back"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

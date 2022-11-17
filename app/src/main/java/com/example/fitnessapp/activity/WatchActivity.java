@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.TextView;
 
 import com.example.fitnessapp.R;
+
+import org.w3c.dom.Text;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -19,11 +22,23 @@ public class WatchActivity extends AppCompatActivity {
     private long pauseOffSet;
     private long timeWorkout = 0; // milisecond
     private GifImageView gif;
+    private TextView instructionTxt;
 
     private void initComponent() {
+        instructionTxt = findViewById(R.id.txtInstruction);
+
         gif = findViewById(R.id.gif);
+        gif.setVisibility(View.GONE);
+
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("Time: %s");
+    }
+
+    private void initContent() {
+        String workoutName = getIntent().getExtras().getString("category");
+        double caloriesPerMinute = getIntent().getExtras().getDouble("caloriesPerMinute");
+
+        instructionTxt.setText(String.format("You are training %s. The calories consumption is %.2f calo per minutes", workoutName, caloriesPerMinute));
     }
 
     @Override
@@ -32,7 +47,14 @@ public class WatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_watch_view);
 
         initComponent();
-        gif.setVisibility(View.GONE);
+        initContent();
+
+    }
+
+    public void onBackBtnClick(View v) {
+        Intent intent = new Intent(WatchActivity.this, MainActivity.class);
+        setResult(RESULT_CANCELED, intent);
+        finish();
     }
 
     public void onStartChronometer(View v) {
@@ -64,13 +86,10 @@ public class WatchActivity extends AppCompatActivity {
 
     public void onStopChronometer(View v) {
         gif.setVisibility(View.GONE);
-        // save to preference
 
         // back to previous view
         timeWorkout = SystemClock.elapsedRealtime() - chronometer.getBase();
         Intent intent = new Intent(WatchActivity.this, MainActivity.class);
-        System.out.println("Time in second: " + timeWorkout / 1000);
-        System.out.println("calories " + (timeWorkout / 1000 / 60) * getIntent().getExtras().getDouble("caloriesPerMinute"));
         intent.putExtra("calories", (timeWorkout / 1000 / 60) * getIntent().getExtras().getDouble("caloriesPerMinute"));
         setResult(RESULT_OK, intent);
         finish();
