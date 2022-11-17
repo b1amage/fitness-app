@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Workout workout = (Workout) workoutAdapter.getItem(position);
-                Toast.makeText(MainActivity.this, workout.getCategory(), Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(MainActivity.this, WatchActivity.class);
                 intent.putExtra("category", workout.getCategory());

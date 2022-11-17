@@ -9,7 +9,6 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -30,7 +29,6 @@ public class MealDetailActivity extends AppCompatActivity {
 
     private TextView totalCalories;
 
-    private Button chooseMealBtn;
 
 
     @Override
@@ -42,7 +40,6 @@ public class MealDetailActivity extends AppCompatActivity {
     }
 
     private void initComponent() {
-        chooseMealBtn = findViewById(R.id.chooseMealBtn);
         imgView = findViewById(R.id.detailMealImg);
         mealName = findViewById(R.id.detailMealNameTxt);
 
@@ -63,12 +60,11 @@ public class MealDetailActivity extends AppCompatActivity {
         ingredient2Name.setText(String.format("%s: ", getIntent().getExtras().getString("ingredient2Name")));
         ingredient3Name.setText(String.format("%s: ", getIntent().getExtras().getString("ingredient3Name")));
 
-        ingredient1Calo.setText(String.format("%s calories", getIntent().getExtras().getDouble("ingredient1Calo")));
-        ingredient2Calo.setText(String.format("%s calories", getIntent().getExtras().getDouble("ingredient2Calo")));
-        ingredient3Calo.setText(String.format("%s calories", getIntent().getExtras().getDouble("ingredient3Calo")));
+        ingredient1Calo.setText(String.format("%.2f calories", getIntent().getExtras().getDouble("ingredient1Calo")));
+        ingredient2Calo.setText(String.format("%.2f calories", getIntent().getExtras().getDouble("ingredient2Calo")));
+        ingredient3Calo.setText(String.format("%.2f calories", getIntent().getExtras().getDouble("ingredient3Calo")));
 
-        totalCalories.setText(String.format("%s calories", getIntent().getExtras().getDouble("totalCalo")));
-
+        totalCalories.setText(String.format("%.2f calories", getIntent().getExtras().getDouble("totalCalo")));
 
         Resources res = getResources(); //resource handle
         Drawable drawable = res.getDrawable(getIntent().getExtras().getInt("img")); //new Image that was added to the res folder
@@ -88,6 +84,12 @@ public class MealDetailActivity extends AppCompatActivity {
         Intent intent = new Intent(MealDetailActivity.this, MealActivity.class);
         intent.putExtra("totalCalo", getIntent().getExtras().getDouble("totalCalo"));
         setResult(RESULT_OK, intent);
+        finish();
+    }
+
+    public void onBackBtnClick(View v) {
+        Intent intent = new Intent(MealDetailActivity.this, MealActivity.class);
+        setResult(RESULT_CANCELED, intent);
         finish();
     }
 }
