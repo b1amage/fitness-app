@@ -29,7 +29,9 @@
                 android:textSize="28dp"
                 android:textStyle="bold"
                 android:id="@+id/profileUsername"
-                android:textColor="@color/primary"/>
+                android:textColor="@color/primary"
+                android:drawableRight="@drawable/edit"
+                android:drawablePadding="4dp"/>
 
 
         <RelativeLayout
