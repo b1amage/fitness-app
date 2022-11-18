@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.example.fitnessapp.R;
 
-import org.w3c.dom.Text;
-
 import pl.droidsonroids.gif.GifImageView;
 
 public class WatchActivity extends AppCompatActivity {

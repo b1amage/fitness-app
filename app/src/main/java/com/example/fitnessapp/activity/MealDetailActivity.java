@@ -29,8 +29,6 @@ public class MealDetailActivity extends AppCompatActivity {
 
     private TextView totalCalories;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

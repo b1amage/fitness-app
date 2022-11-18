@@ -16,10 +16,10 @@ import android.widget.Toast;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.adapter.WorkoutAdapter;
+import com.example.fitnessapp.data.WorkoutData;
 import com.example.fitnessapp.model.Workout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,18 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        workoutList = new ArrayList<>();
-
-        workoutList.add(new Workout("Basketball", 50, R.drawable.basketball));
-        workoutList.add(new Workout("Gym", 60, R.drawable.gym));
-        workoutList.add(new Workout("Volleyball", 70, R.drawable.volleyball));
-        workoutList.add(new Workout("Yoga", 80, R.drawable.yoga));
-        workoutList.add(new Workout("Cardio", 90, R.drawable.cardio));
-        workoutList.add(new Workout("Badminton", 100, R.drawable.badminton));
-        workoutList.add(new Workout("Tennis", 100, R.drawable.tennis));
-        workoutList.add(new Workout("Running", 100, R.drawable.running));
-        workoutList.add(new Workout("Cycling", 100, R.drawable.cycling));
-
+        workoutList = WorkoutData.getWorkoutList();
 
         WorkoutAdapter workoutAdapter = new WorkoutAdapter(workoutList);
 
