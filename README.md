@@ -33,7 +33,7 @@
 - Run the SplashActivity
 
 ### Note
-- Demonstration: https://www.youtube.com/watch?v=k8mxdgCXGWo
+- Demonstration: https://www.youtube.com/watch?v=JAfzY0dyMhA
 - Simulator built in demonstration: Pixel 3a
 
 ### Supporting tools used
